@@ -1,5 +1,13 @@
-# GPT-3-Encoder
-Javascript BPE Encoder Decoder for GPT-2 / GPT-3
+# GPT-3-Encoder-Single
+Javascript BPE Encoder Decoder for GPT-2 / GPT-3, is single file,brower testing and develop
+
+```js
+    <script src="gpt3-encoder-single.js"></script>
+    <script>
+      encode('hello world') // encode result is `[31373,995]`
+      decode([31373,995]) // decode result is `hello world`
+    </script>
+```
 
 ## About
 GPT-2 and GPT-3 use byte pair encoding to turn text into a series of integers to feed into the model. This is a javascript implementation of OpenAI's original python encoder/decoder which can be found [here](https://github.com/openai/gpt-2)

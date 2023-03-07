@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="gpt3-encoder-single.js"></script>
+    <script>
+        function bpe_token_encoder() {
+            data = document.getElementById('encoder').value;
+            tokens =  encode(data);
+            result = "encoder input: " + data;
+            result += "\ntoken :" + tokens;
+            result +=  "\ntoken len :" + tokens.length;
+            document.getElementById('output').innerHTML = "<pre>" + result + "</pre>";
+        }
+
+        function bpe_token_decoder(){
+            data = document.getElementById('decoder').value;
+            tokens =  decode(data.split(","));
+            result = "decoder input: " + data;
+            result += "\nword :" + tokens;
+            result +=  "\nword len :" + tokens.length;
+            document.getElementById('decoder_output').innerHTML = "<pre>" + result + "</pre>";
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <textarea id="encoder" placeholder="hello world"></textarea>
+        <button onclick="bpe_token_encoder()">BPE TOKEN</button>
+    </div>
+    <div>
+        <p id="output">Encoder Output:</p>
+    </div>
+
+    <div>
+        <textarea id="decoder" placeholder="31373,995"></textarea>
+        <button onclick="bpe_token_decoder()">Decoder TOKEN</button>
+    </div>
+    <div>
+        <p id="decoder_output">Decoder Output:</p>
+    </div>
+</body>
+
+</html>
